@@ -1,0 +1,82 @@
+#app-loading-overlay {
+  display: flex;
+}
+
+#meal-details,
+#products-section,
+#foodlog-section {
+  display: none;
+}
+
+.wide {
+  grid-column: 1 / -1;
+}
+
+#recipes-grid.rows {
+  grid-template-columns: 1fr;
+}
+
+#recipes-grid.rows .recipe-card {
+  display: flex;
+  align-items: stretch;
+}
+
+#recipes-grid.rows .recipe-media {
+  width: 240px;
+  height: 168px;
+  min-height: 168px;
+  flex-shrink: 0;
+}
+
+#recipes-grid.rows .recipe-media img {
+  height: 100%;
+}
+
+#recipes-grid.rows .recipe-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+#product-categories {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+#goods-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(15, 23, 42, 0.45);
+}
+
+#goods-layer.open {
+  display: flex;
+}
+
+#goods-layer .sheet {
+  width: min(760px, 100%);
+  max-height: 90vh;
+  overflow: auto;
+  background: white;
+  border-radius: 18px;
+  padding: 24px;
+}
+
+@media (max-width: 640px) {
+  #recipes-grid.rows .recipe-card {
+    flex-direction: column;
+  }
+
+  #recipes-grid.rows .recipe-media {
+    width: 100%;
+    height: 190px;
+  }
+}
